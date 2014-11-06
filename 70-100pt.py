@@ -24,11 +24,28 @@ class MyApp:
        	    self.myParent = parent  
        	    self.myContainer1 = Frame(parent)
        	    self.myContainer1.pack()
+       	    
+       	    # Up button
        	    self.up = Button(self.myContainer1)
        	    self.up.configure(text="up", background= "green")
-       	    self.up.grid(row=0,column=0)
+       	    self.up.grid(row=0,column=1)
        	    # Bind an event to the first button
        	    self.up.bind("<Button-1>", self.upClicked)
+       	    # Left button
+       	    self.left = Button(self.myContainer1)
+       	    self.left.configure(text="left", background= "green")
+       	    self.left.grid(row=1,column=0)
+       	    self.left.bind("<Button-1>", self.leftClicked)
+       	    # Right button
+       	    self.right = Button(self.myContainer1)
+       	    self.right.configure(text="right", background= "green")
+       	    self.right.grid(row=1,column=2)
+       	    self.right.bind("<Button-1>", self.rightClicked)
+       	    # Down button
+       	    self.down = Button(self.myContainer1)
+       	    self.down.configure(text="down", background= "green")
+       	    self.down.grid(row=2,column=1)
+       	    self.down.bind("<Button-1>", self.downClicked)
        	    
        	    # No need to edit this - just includes the drawpad into our frame
        	    drawpad.pack(side=RIGHT)
@@ -47,6 +64,21 @@ class MyApp:
 	   global oval
 	   global player
 	   drawpad.move(player,0,-20)
+	  
+	def leftClicked(self, event):   
+	   global oval
+	   global player
+	   drawpad.move(player,-20,0)
+	
+	def rightClicked(self, event):   
+	   global oval
+	   global player
+	   drawpad.move(player,20,0)
+	   
+	def downClicked(self, event):   
+	   global oval
+	   global player
+	   drawpad.move(player,0,20)
 		
 
 app = MyApp(root)
