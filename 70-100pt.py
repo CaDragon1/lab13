@@ -16,7 +16,9 @@ drawpad = Canvas(root, width=800,height=600, background='white')
 player = drawpad.create_oval(390,580,410,600, fill="red")
 
 # Create your "enemies" here, before the class
-baddie1 = drawpad.create_oval(10, 10, 30, 30, fill='green')
+baddie1 = drawpad.create_oval(30, 30, 70, 70, fill='green')
+baddie2 = drawpad.create_oval(10, 10, 30, 30, fill='green')
+baddie3 = drawpad.create_oval(10, 10, 30, 30, fill='green')
 direction = 1
 #def animate():
  #   global direction
@@ -72,19 +74,16 @@ class MyApp:
 	    global player
 	    # Remember to include your "enemies" with "global"
 	    global baddie1
-	    def animate():
-	       global direction
-	       global animate
-               x1, y1, x2, y2 = drawpad.coords(baddie1)
-               if x2 > drawpad.winfo_width(): 
-                    direction = - 1
-               elif x1 < 0:
+            global direction
+            x1, y1, x2, y2 = drawpad.coords(baddie1)
+            if x2 > drawpad.winfo_width(): 
+                direction = - 1
+            elif x1 < 0:
                 direction = 1
-               drawpad.move(baddie1,direction,0)
-               drawpad.after(1, animate)
+            drawpad.move(baddie1,direction,0)
        	    
 	    # Uncomment this when you're ready to test out your animation!
-	    #drawpad.after(10,self.animate)
+	    drawpad.after(10,self.animate)
 		
 	def upClicked(self, event):   
 	   global oval
