@@ -71,8 +71,9 @@ class MyApp:
 	    global drawpad
 	    global player
 	    # Remember to include your "enemies" with "global"
-	    global direction
 	    global baddie1
+	    def animate():
+	       global direction
 	    global animate
             x1, y1, x2, y2 = drawpad.coords(baddie1)
             if x2 > drawpad.winfo_width(): 
