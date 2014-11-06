@@ -48,17 +48,17 @@ class MyApp:
        	    self.up.bind("<Button-1>", self.upClicked)
        	    # Left button
        	    self.left = Button(self.myContainer1)
-       	    self.left.configure(text="left", background= "green")
+       	    self.left.configure(text="left", background= "pink2")
        	    self.left.grid(row=1,column=0)
        	    self.left.bind("<Button-1>", self.leftClicked)
        	    # Right button
        	    self.right = Button(self.myContainer1)
-       	    self.right.configure(text="right", background= "green")
+       	    self.right.configure(text="right", background= "red2")
        	    self.right.grid(row=1,column=2)
        	    self.right.bind("<Button-1>", self.rightClicked)
        	    # Down button
        	    self.down = Button(self.myContainer1)
-       	    self.down.configure(text="down", background= "green")
+       	    self.down.configure(text="down", background= "skyblue")
        	    self.down.grid(row=2,column=1)
        	    self.down.bind("<Button-1>", self.downClicked)
        	    
@@ -106,6 +106,5 @@ class MyApp:
 	   global player
 	   drawpad.move(player,0,20)
 		
-        animate(baddie1)
 app = MyApp(root)
 root.mainloop()
