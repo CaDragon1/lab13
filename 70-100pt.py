@@ -74,14 +74,14 @@ class MyApp:
 	    global baddie1
 	    def animate():
 	       global direction
-	    global animate
-            x1, y1, x2, y2 = drawpad.coords(baddie1)
-            if x2 > drawpad.winfo_width(): 
-                direction = - 1
-            elif x1 < 0:
+	       global animate
+               x1, y1, x2, y2 = drawpad.coords(baddie1)
+               if x2 > drawpad.winfo_width(): 
+                    direction = - 1
+               elif x1 < 0:
                 direction = 1
-            drawpad.move(baddie1,direction,0)
-            drawpad.after(1, animate)
+               drawpad.move(baddie1,direction,0)
+               drawpad.after(1, animate)
        	    
 	    # Uncomment this when you're ready to test out your animation!
 	    #drawpad.after(10,self.animate)
@@ -106,6 +106,6 @@ class MyApp:
 	   global player
 	   drawpad.move(player,0,20)
 		
-
+        animate(baddie1)
 app = MyApp(root)
 root.mainloop()
