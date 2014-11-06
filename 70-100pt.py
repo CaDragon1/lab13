@@ -16,6 +16,21 @@ drawpad = Canvas(root, width=800,height=600, background='white')
 player = drawpad.create_oval(390,580,410,600, fill="red")
 
 # Create your "enemies" here, before the class
+baddie1 = drawpad.create_oval(10, 10, 30, 30, fill='green')
+direction = 1
+#def animate():
+ #   global direction
+  #  x1, y1, x2, y2 = drawpad.coords(circle)
+   # if x2 > drawpad.winfo_width(): 
+    #    direction = - 1
+    #elif x1 < 0:
+     #   direction = 1
+    #drawpad.move(circle,direction,0)
+    #drawpad.after(1, animate)
+
+#animate()
+#root.mainloop()
+
 
 
 class MyApp:
@@ -56,7 +71,17 @@ class MyApp:
 	    global drawpad
 	    global player
 	    # Remember to include your "enemies" with "global"
-	    
+	    global direction
+	    global baddie1
+	    global animate
+            x1, y1, x2, y2 = drawpad.coords(baddie1)
+            if x2 > drawpad.winfo_width(): 
+                direction = - 1
+            elif x1 < 0:
+                direction = 1
+            drawpad.move(baddie1,direction,0)
+            drawpad.after(1, animate)
+       	    
 	    # Uncomment this when you're ready to test out your animation!
 	    #drawpad.after(10,self.animate)
 		
